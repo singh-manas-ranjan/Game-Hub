@@ -1,15 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
-
-interface Game {
-  id: number;
-  name: String;
-}
-
-interface GamesResponse {
-  count: number;
-  results: Game[];
-}
+import { Game, GamesResponse } from "../services/gameService";
 
 const GameGrid = () => {
   const [games, setGames] = useState<Game[]>([]);

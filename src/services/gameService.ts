@@ -3,6 +3,7 @@ import create from "./HttpService";
 export interface Game {
     id: number;
     name: String;
+    background_image : string;
   }
 
 export interface GamesResponse {

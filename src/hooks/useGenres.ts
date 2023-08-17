@@ -1,23 +1,7 @@
-import { useEffect, useState } from "react"
-import genreService, { Genre, GenreResponse } from "../services/genreService";
-import { CanceledError } from "axios";
-const useGenre = () =>{
-    const [genres, setGenre] = useState<Genre[]>([]);
-    const [error, setError] = useState('');
-   useEffect(() => {
-    const {request, cancel} = genreService.getAll<GenreResponse>();
-    request.then(({data}) =>{
-        setGenre(data.results)
-    })
-    .catch((error) =>{
-        if(error instanceof CanceledError) return
-        setError(error.message);
-    })
+import { HttpService } from "../services/HttpService"
+import genreService, { Genre } from "../services/genreService"
+import useData from "./useData"
 
-    return ()=> cancel()
-   },[])
-
-   return {genres, error, setGenre, setError}
-}
+const useGenre = () => useData<Genre, HttpService>(genreService)
 
 export default useGenre

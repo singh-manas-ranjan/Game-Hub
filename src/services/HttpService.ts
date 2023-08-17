@@ -1,6 +1,6 @@
 import apiClient from "./apiClient";
 
-class HttpService{
+export class HttpService{
 
     endPoint : string;
 

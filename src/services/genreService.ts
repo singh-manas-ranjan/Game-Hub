@@ -5,9 +5,4 @@ export interface Genre{
     name: string
 }
 
-export interface GenreResponse{
-    count: number,
-    results : Genre[]
-}
-
 export default create('/genres');

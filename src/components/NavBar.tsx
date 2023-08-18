@@ -4,7 +4,7 @@ import ColorModeSwitch from "./ColorModeSwitch";
 const NavBar = () => {
   return (
     <HStack
-      paddingInline="20px"
+      paddingInline={2}
       paddingBlock="10px"
       justifyContent="space-between"
     >

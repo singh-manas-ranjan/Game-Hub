@@ -5,16 +5,22 @@ import {
   Skeleton,
   SkeletonText,
 } from "@chakra-ui/react";
+import GenreListImageContainer from "./GenreListImageContainer";
+import GenreListItemContainer from "./GenreListItemContainer";
 
 const GenreListSkeleton = () => {
   return (
-    <List paddingBlock={5}>
-      <ListItem>
-        <HStack>
-          <Skeleton boxSize={9} borderRadius={6} />
-          <SkeletonText width="100%" />
-        </HStack>
-      </ListItem>
+    <List>
+      <GenreListItemContainer>
+        <ListItem>
+          <HStack>
+            <GenreListImageContainer>
+              <Skeleton height="100%" />
+            </GenreListImageContainer>
+            <SkeletonText width="100%" />
+          </HStack>
+        </ListItem>
+      </GenreListItemContainer>
     </List>
   );
 };

@@ -3,6 +3,8 @@ import useGenre from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/imageUrl";
 import GenreListSkeleton from "./GenreListSkeleton";
 import getSkeletonArray from "../services/skeletonArray";
+import GenreListImageContainer from "./GenreListImageContainer";
+import GenreListItemContainer from "./GenreListItemContainer";
 
 const GenreList = () => {
   const { isLoading, data, error } = useGenre();
@@ -15,18 +17,21 @@ const GenreList = () => {
       {isLoading &&
         skeletons.map((skeleton) => <GenreListSkeleton key={skeleton} />)}
 
-      <List paddingBlock={5}>
+      <List>
         {data.map((genre) => (
-          <ListItem key={genre.id} paddingBottom={6}>
-            <HStack>
-              <Image
-                boxSize={9}
-                borderRadius={6}
-                src={getCroppedImageUrl(genre.image_background)}
-              />
-              <Text fontSize="lg">{genre.name}</Text>
-            </HStack>
-          </ListItem>
+          <GenreListItemContainer key={genre.id}>
+            <ListItem>
+              <HStack>
+                <GenreListImageContainer>
+                  <Image
+                    src={getCroppedImageUrl(genre.image_background)}
+                    height="100%"
+                  />
+                </GenreListImageContainer>
+                <Text fontSize="lg">{genre.name}</Text>
+              </HStack>
+            </ListItem>
+          </GenreListItemContainer>
         ))}
       </List>
     </>

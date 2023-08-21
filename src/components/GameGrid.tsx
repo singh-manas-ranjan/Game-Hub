@@ -26,8 +26,7 @@ const GameGrid = ({ selectedGenre }: Props) => {
           xl: 4,
         }}
         spacing={6}
-        paddingInline={5}
-        paddingBlock={5}
+        marginTop={5}
       >
         {isLoading &&
           skeletons.map((skeleton) => (

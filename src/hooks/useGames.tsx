@@ -1,19 +1,18 @@
 import gameService, { Game } from "../services/gameService";
 import useData from "./useData";
 import { HttpService } from "../services/HttpService";
-import { Genre } from "../services/genreService";
-import { Platform } from "../services/platformService";
+import { GameQuery } from "../App";
 
-const useGames = (
-  selectedGenre: Genre | null,
-  selectedPlatform: Platform | null
-) =>
+const useGames = (selectedGameQuery: GameQuery) =>
   useData<Game, HttpService>(
     gameService,
     {
-      params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id },
+      params: {
+        genres: selectedGameQuery.genre?.id,
+        platforms: selectedGameQuery.platform?.id,
+      },
     },
-    [selectedGenre?.id, selectedPlatform?.id]
+    [selectedGameQuery]
   );
 
 export default useGames;

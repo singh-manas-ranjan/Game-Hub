@@ -1,10 +1,5 @@
 import create from "./HttpService";
-
-export interface Platform{
-  id : number,
-  name: string,
-  slug: string
-}
+import { Platform } from "./platformService";
 
 export interface Game {
     id: number;

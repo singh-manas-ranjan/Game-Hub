@@ -6,12 +6,18 @@ import SearchInput from "./SearchInput";
 interface Props {
   onSearch: (searchText: string) => void;
 }
+const reload = () => document.location.reload();
 const NavBar = ({ onSearch }: Props) => {
   return (
-    <HStack paddingInline={2} paddingBlock="10px" whiteSpace={"nowrap"}>
-      <Image src={logo} boxSize="50px" />
+    <HStack
+      paddingInline={2}
+      paddingBlock="10px"
+      whiteSpace={"nowrap"}
+      cursor={"pointer"}
+    >
+      <Image src={logo} boxSize="50px" onClick={reload} />
       <Show above="lg">
-        <Text fontWeight="bold" fontSize="2xl">
+        <Text fontWeight="bold" fontSize="2xl" onClick={reload}>
           Game Hub
         </Text>
       </Show>

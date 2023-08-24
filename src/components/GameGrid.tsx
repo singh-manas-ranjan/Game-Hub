@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -14,7 +14,7 @@ const GameGrid = ({ selectedGameQuery }: Props) => {
   const { data, error, isLoading } = useGames(selectedGameQuery);
   const skeletons = getSkeletonArray();
 
-  if (error) return null;
+  if (error) return <Text textAlign="center">{error}</Text>;
 
   return (
     <>

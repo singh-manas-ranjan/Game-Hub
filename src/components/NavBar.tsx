@@ -16,7 +16,7 @@ const NavBar = ({ onSearch }: Props) => {
       cursor={"pointer"}
     >
       <Image src={logo} boxSize="50px" onClick={reload} />
-      <Show above="lg">
+      <Show above="sm">
         <Text fontWeight="bold" fontSize="2xl" onClick={reload}>
           Game Hub
         </Text>

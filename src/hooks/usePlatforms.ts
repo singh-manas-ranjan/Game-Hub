@@ -1,7 +1,4 @@
-import { HttpService } from "../services/HttpService";
-import platformService, { Platform } from "../services/platformService";
-import useData from "./useData";
-
-const usePlatforms = () => useData<Platform, HttpService>(platformService);
+import platformsData from '../Data/Platforms'
+const usePlatforms = () => ({data:platformsData, isLoading: false, error: null})
 
 export default usePlatforms;

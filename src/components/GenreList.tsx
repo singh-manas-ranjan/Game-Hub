@@ -6,7 +6,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-import useGenre from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/imageUrl";
 import GenreListSkeleton from "./GenreListSkeleton";
 import getSkeletonArray from "../services/skeletonArray";
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { isLoading, data, error } = useGenre();
+  const { isLoading, data, error } = useGenres();
   const skeletons = getSkeletonArray();
 
   if (error) return null;

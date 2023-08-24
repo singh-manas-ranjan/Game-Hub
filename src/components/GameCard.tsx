@@ -19,12 +19,12 @@ const GameCard = ({
           <PlatformIconList
             platforms={parent_platforms.map(({ platform }) => platform)}
           />
-          <HStack>
-            <Emoji rating={rating_top} />
-            <CriticScore score={metacritic} />
-          </HStack>
+          <CriticScore score={metacritic} />
         </HStack>
-        <Heading fontSize="2xl">{name}</Heading>
+        <HStack>
+          <Heading fontSize="2xl">{name}</Heading>
+          <Emoji rating={rating_top} />
+        </HStack>
       </CardBody>
     </Card>
   );

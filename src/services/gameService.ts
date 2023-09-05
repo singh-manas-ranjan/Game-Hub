@@ -10,4 +10,4 @@ export interface Game {
     rating_top: number;
   }
 
-export default create('/games');
+export default create<Game>('/games');

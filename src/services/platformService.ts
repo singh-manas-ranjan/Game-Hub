@@ -5,4 +5,4 @@ export interface Platform{
     slug: string
 }
 
-export default create('/platforms/lists/parents')
+export default create<Platform>('/platforms/lists/parents')

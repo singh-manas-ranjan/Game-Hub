@@ -8,18 +8,17 @@ import {
 } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/imageUrl";
-import GenreListSkeleton from "./GenreListSkeleton";
 import getSkeletonArray from "../services/skeletonArray";
 import GenreListImageContainer from "./GenreListImageContainer";
 import GenreListItemContainer from "./GenreListItemContainer";
-import { Genre } from "../services/genreService";
+import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  onSelectGenre: (genre: number) => void;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { isLoading, data, error } = useGenres();
   const skeletons = getSkeletonArray();
 
@@ -49,11 +48,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                   textAlign="left"
                   variant="link"
                   fontSize="lg"
-                  fontWeight={
-                    genre.id === selectedGenre?.id ? "bold" : "normal"
-                  }
-                  color={genre.id === selectedGenre?.id ? "white" : "gray.500"}
-                  onClick={() => onSelectGenre(genre)}
+                  fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
+                  color={genre.id === selectedGenreId ? "white" : "gray.500"}
+                  onClick={() => onSelectGenre(genre.id)}
                 >
                   {genre.name}
                 </Button>

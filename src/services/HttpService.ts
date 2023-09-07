@@ -3,7 +3,8 @@ import apiClient from "./apiClient";
 
 export interface FetchResponse<T>{
     count: number,
-    results: T[]
+    results: T[],
+    next: string | null
   }
 
 export class HttpService<T>{

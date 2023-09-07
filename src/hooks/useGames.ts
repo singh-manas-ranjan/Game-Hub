@@ -1,5 +1,6 @@
-import { GameQuery } from "../App";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import ms from "ms";
+import { GameQuery } from "../App";
 import { FetchResponse } from "../services/HttpService";
 import gameService, { Game } from "../services/gameService";
 
@@ -17,7 +18,7 @@ const useGames = (selectedGameQuery: GameQuery) =>
         },
       }),
     refetchOnWindowFocus: false,
-    staleTime: 30 * 60 * 1000,
+    staleTime: ms('24h'),
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },

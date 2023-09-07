@@ -37,6 +37,7 @@ const GameGrid = ({ selectedGameQuery }: Props) => {
           Yah!! You have seen it all
         </Text>
       }
+      style={{ overflowY: "hidden" }}
     >
       <SimpleGrid
         columns={{

@@ -3,11 +3,8 @@ import logo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
 const reload = () => document.location.reload();
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
   return (
     <HStack
       paddingInline={2}
@@ -21,7 +18,7 @@ const NavBar = ({ onSearch }: Props) => {
           Game Hub
         </Text>
       </Show>
-      <SearchInput onSearch={onSearch} />
+      <SearchInput />
       <ColorModeSwitch />
     </HStack>
   );

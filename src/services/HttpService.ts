@@ -19,8 +19,11 @@ export class HttpService<T>{
 
         return apiClient.get<FetchResponse<T>>(this.endPoint, requestConfig).then(res => res.data)
     }
+    
+    get(id: number | string){
+        return apiClient.get<T>(`${this.endPoint}/${id}`).then(res => res.data);
+    }
 }
-
 const create = <T>(endPoint : string) =>{
     return new HttpService<T>(endPoint);
 }

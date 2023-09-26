@@ -5,7 +5,7 @@ interface Props {
   children: string;
 }
 const ExpandableText = ({ children }: Props) => {
-  const limit = 300;
+  const limit = 350;
   const [expanded, setExpanded] = useState(false);
 
   if (!children) return null;

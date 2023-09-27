@@ -22,6 +22,7 @@ const useGames = () =>
         },
       }),
     refetchOnWindowFocus: false,
+    refetchOnMount:false,
     staleTime: ms('24h'),
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;

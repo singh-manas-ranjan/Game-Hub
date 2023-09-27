@@ -4,6 +4,7 @@ import ExpandableText from "../components/ExpandableText";
 import useGame from "../hooks/useGame";
 import GameAttributes from "../components/GameAttributes";
 import GameTrailer from "../components/GameTrailer";
+import GameScreenshots from "../components/GameScreenshots";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -13,10 +14,11 @@ const GameDetailsPage = () => {
   return (
     <Box padding={5}>
       <Heading>{game.name}</Heading>
-      <SimpleGrid columns={{ lg: 2 }} gap={5} paddingBlock={5}>
-        <GameTrailer gameId={game.id} />
+      <SimpleGrid columns={{ lg: 2 }} spacing={10} paddingBlock={5}>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
+        <GameTrailer gameId={game.id} />
+        <GameScreenshots gameId={game.id} />
       </SimpleGrid>
     </Box>
   );

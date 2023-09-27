@@ -16,6 +16,7 @@ const GameTrailer = ({ gameId }: Props) => {
         src={firstTrailer.data[480]}
         poster={firstTrailer.preview}
         controls
+        style={{ borderRadius: 4 }}
       />
     </Box>
   ) : null;

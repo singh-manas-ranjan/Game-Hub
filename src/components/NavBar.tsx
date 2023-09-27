@@ -10,6 +10,7 @@ const NavBar = () => {
       <Link
         to="/"
         style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
+        onClick={() => location.reload()}
       >
         <Box boxSize="50px">
           <Image src={logo} />

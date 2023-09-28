@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
-import create, { FetchResponse } from "../services/HttpService"
-import { Screenshot } from "../entities/Screenshot"
+import { useQuery } from "@tanstack/react-query";
+import Screenshot from "../entities/Screenshot";
+import create, { FetchResponse } from "../services/HttpService";
 
 const useScreenshots = (gameId: number) =>{
     const screenshotService = create<Screenshot>(`/games/${gameId}/screenshots`);

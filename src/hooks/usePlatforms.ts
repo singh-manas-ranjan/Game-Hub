@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import platforms from "../Data/Platforms";
+import Platform from "../entities/Platform";
 import create, { FetchResponse } from "../services/HttpService";
-import { Platform } from "../entities/Platform";
 
 const usePlatforms = () => 
 {    

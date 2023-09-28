@@ -19,7 +19,7 @@ const ExpandableText = ({ children }: Props) => {
 
   const summary = expanded ? children : children.substring(0, limit) + ".... ";
   return (
-    <Box>
+    <Box marginTop={5}>
       <Heading size={"lg"}>About</Heading>
       <Text>
         {summary}
